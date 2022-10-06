@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login.payload.response;
+package br.com.douglas.aterrosystem.payload.response;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login.controllers;
+package br.com.douglas.aterrosystem.controllers;
 
 import java.util.HashSet;
 import java.util.List;
@@ -7,6 +7,16 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import br.com.douglas.aterrosystem.models.ERole;
+import br.com.douglas.aterrosystem.models.Role;
+import br.com.douglas.aterrosystem.payload.request.LoginRequest;
+import br.com.douglas.aterrosystem.payload.request.SignupRequest;
+import br.com.douglas.aterrosystem.payload.response.MessageResponse;
+import br.com.douglas.aterrosystem.payload.response.UserInfoResponse;
+import br.com.douglas.aterrosystem.repository.RoleRepository;
+import br.com.douglas.aterrosystem.repository.UserRepository;
+import br.com.douglas.aterrosystem.security.jwt.JwtUtils;
+import br.com.douglas.aterrosystem.security.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
@@ -22,17 +32,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bezkoder.spring.login.models.ERole;
-import com.bezkoder.spring.login.models.Role;
-import com.bezkoder.spring.login.models.User;
-import com.bezkoder.spring.login.payload.request.LoginRequest;
-import com.bezkoder.spring.login.payload.request.SignupRequest;
-import com.bezkoder.spring.login.payload.response.UserInfoResponse;
-import com.bezkoder.spring.login.payload.response.MessageResponse;
-import com.bezkoder.spring.login.repository.RoleRepository;
-import com.bezkoder.spring.login.repository.UserRepository;
-import com.bezkoder.spring.login.security.jwt.JwtUtils;
-import com.bezkoder.spring.login.security.services.UserDetailsImpl;
+import br.com.douglas.aterrosystem.models.User;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

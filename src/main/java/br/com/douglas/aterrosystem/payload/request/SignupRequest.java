@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login.payload.request;
+package br.com.douglas.aterrosystem.payload.request;
 
 import java.util.Set;
 

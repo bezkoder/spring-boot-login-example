@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login.security.jwt;
+package br.com.douglas.aterrosystem.security.jwt;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.bezkoder.spring.login.security.services.UserDetailsServiceImpl;
+import br.com.douglas.aterrosystem.security.services.UserDetailsServiceImpl;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
   @Autowired

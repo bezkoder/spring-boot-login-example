@@ -8,13 +8,13 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bezkoder</groupId>
-	<artifactId>spring-boot-login-example</artifactId>
+	<groupId>br.com.douglas</groupId>
+	<artifactId>aterrosystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-login-example</name>
-	<description>Spring Boot Login example with Spring Security, JWT and MySQL - Rest API</description>
+	<name>AterroSystem</name>
+	<description>Gerenciador de Aterros</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

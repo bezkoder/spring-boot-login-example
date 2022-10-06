@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login.models;
+package br.com.douglas.aterrosystem.models;
 
 import java.util.HashSet;
 import java.util.Set;
