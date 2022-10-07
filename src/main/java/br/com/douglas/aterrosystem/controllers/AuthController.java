@@ -24,6 +24,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -63,18 +64,19 @@ public class AuthController {
 
     UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-    ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
+    String jwt = jwtUtils.generateTokenFromUsername(userDetails.getUsername());
 
     List<String> roles = userDetails.getAuthorities().stream()
-        .map(item -> item.getAuthority())
+        .map(GrantedAuthority::getAuthority)
         .collect(Collectors.toList());
 
-    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-        .body(new UserInfoResponse(userDetails.getId(),
-                                   userDetails.getUsername(),
-                                   userDetails.getEmail(),
-                                   jwtCookie.toString(),
-                                   roles));
+    return ResponseEntity.ok().body(UserInfoResponse.builder()
+                    .id(userDetails.getId())
+                    .username(userDetails.getUsername())
+                    .email(userDetails.getEmail())
+                    .accessToken(jwt)
+                    .roles(roles)
+            .build());
   }
 
   @PostMapping("/signup")
