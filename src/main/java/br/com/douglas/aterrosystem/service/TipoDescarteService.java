@@ -37,14 +37,15 @@ public class TipoDescarteService {
         return tipoDescarteRepository.findAll(sort);
     }
 
-    public TipoDescarte update(TipoDescarte entity) {
+    public TipoDescarte update(TipoDescarte entity) throws DomainException {
         Optional<TipoDescarte> optTipoDescarte = this.tipoDescarteRepository.findById(entity.getId());
         if (optTipoDescarte.isPresent()) {
             optTipoDescarte.get().setNome(entity.getNome());
             optTipoDescarte.get().setValor(entity.getValor());
             return tipoDescarteRepository.save(optTipoDescarte.get());
+        }else {
+            throw new DomainException(String.format("Tipo de descarte com id %s não encontrado", entity.getId()));
         }
-        return entity;
     }
 
     public void delete(Long id) throws DomainException{

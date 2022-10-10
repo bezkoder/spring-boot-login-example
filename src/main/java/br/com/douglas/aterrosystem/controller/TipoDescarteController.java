@@ -53,7 +53,7 @@ public class TipoDescarteController {
 
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     @PutMapping
-    public TipoDescarteResponse update(@Valid @RequestBody TipoDescarte entity) throws DomainException{
+    public TipoDescarteResponse update(@Valid @RequestBody TipoDescarte entity) throws DomainException {
         return convert(entityService.update(entity));
     }
 
