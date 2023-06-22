@@ -1,6 +1,7 @@
 # Spring Boot Login example with Spring Security, MySQL and JWT
+Build a Spring Boot Login and Registration example (Rest API) that supports JWT with HttpOnly Cookie. You’ll know:
 
-- Appropriate Flow for User Login and Registration with JWT
+- Appropriate Flow for User Login and Registration with JWT and HttpOnly Cookies
 - Spring Boot Rest Api Architecture with Spring Security
 - How to configure Spring Security to work with JWT
 - How to define Data Models and association for Authentication and Authorization
@@ -22,6 +23,11 @@ For more detail, please visit:
 
 > [For MongoDB](https://www.bezkoder.com/spring-boot-jwt-auth-mongodb/)
 
+Working with Front-end:
+> [Angular 12](https://www.bezkoder.com/angular-12-jwt-auth-httponly-cookie/) / [Angular 13](https://www.bezkoder.com/angular-13-jwt-auth-httponly-cookie/) / [Angular 14](https://www.bezkoder.com/angular-14-jwt-auth/) / [Angular 15](https://www.bezkoder.com/angular-15-jwt-auth/) / [Angular 16](https://www.bezkoder.com/angular-16-jwt-auth/)
+
+> [React](https://www.bezkoder.com/react-login-example-jwt-hooks/) / [React Redux](https://www.bezkoder.com/redux-toolkit-auth/)
+
 ## Dependency
 – If you want to use PostgreSQL:
 ```xml
@@ -34,8 +40,8 @@ For more detail, please visit:
 – or MySQL:
 ```xml
 <dependency>
-  <groupId>mysql</groupId>
-  <artifactId>mysql-connector-java</artifactId>
+  <groupId>com.mysql</groupId>
+  <artifactId>mysql-connector-j</artifactId>
   <scope>runtime</scope>
 </dependency>
 ```
@@ -54,7 +60,8 @@ spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.hibernate.ddl-auto= update
 
 # App Properties
-bezkoder.app.jwtSecret= bezKoderSecretKey
+bezkoder.app.jwtCookieName= bezkoder
+bezkoder.app.jwtSecret= ======================BezKoder=Spring===========================
 bezkoder.app.jwtExpirationMs= 86400000
 ```
 - For MySQL
@@ -67,7 +74,8 @@ spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDiale
 spring.jpa.hibernate.ddl-auto= update
 
 # App Properties
-bezkoder.app.jwtSecret= bezKoderSecretKey
+bezkoder.app.jwtCookieName= bezkoder
+bezkoder.app.jwtSecret= ======================BezKoder=Spring===========================
 bezkoder.app.jwtExpirationMs= 86400000
 ```
 ## Run Spring Boot application
@@ -93,14 +101,22 @@ INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 
 > [Spring Boot Repository Unit Test with @DataJpaTest](https://bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/)
 
+> [Spring Boot Rest Controller Unit Test with @WebMvcTest](https://www.bezkoder.com/spring-boot-webmvctest/)
+
 > [Spring Boot Pagination & Sorting example](https://www.bezkoder.com/spring-boot-pagination-sorting-example/)
 
+> Validation: [Spring Boot Validate Request Body](https://www.bezkoder.com/spring-boot-validate-request-body/)
+
+> Documentation: [Spring Boot and Swagger 3 example](https://www.bezkoder.com/spring-boot-swagger-3/)
+
+> Caching: [Spring Boot Redis Cache example](https://www.bezkoder.com/spring-boot-redis-cache-example/)
+
 Associations:
-> [Spring Boot One To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-one-to-many/)
+> [JPA/Hibernate One To Many example in Spring Boot](https://www.bezkoder.com/jpa-one-to-many/)
 
-> [Spring Boot Many To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-many-to-many/)
+> [JPA/Hibernate Many To Many example in Spring Boot](https://www.bezkoder.com/jpa-many-to-many/)
 
-> [JPA One To One example with Spring Boot](https://www.bezkoder.com/jpa-one-to-one/)
+> [JPA/Hibernate One To One example in Spring Boot](https://www.bezkoder.com/jpa-one-to-one/)
 
 Deployment:
 > [Deploy Spring Boot App on AWS – Elastic Beanstalk](https://www.bezkoder.com/deploy-spring-boot-aws-eb/)
@@ -146,6 +162,18 @@ Deployment:
 > [Angular 14 + Spring Boot + MySQL example](https://www.bezkoder.com/spring-boot-angular-14-mysql/)
 
 > [Angular 14 + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-angular-14-postgresql/)
+
+> [Angular 15 + Spring Boot + H2 Embedded Database example](https://www.bezkoder.com/spring-boot-angular-15-crud/)
+
+> [Angular 15 + Spring Boot + MySQL example](https://www.bezkoder.com/spring-boot-angular-15-mysql/)
+
+> [Angular 15 + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-angular-15-postgresql/)
+
+> [Angular 16 + Spring Boot + H2 Embedded Database example](https://www.bezkoder.com/spring-boot-angular-16-crud/)
+
+> [Angular 16 + Spring Boot + MySQL example](https://www.bezkoder.com/spring-boot-angular-16-mysql/)
+
+> [Angular 16 + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-angular-16-postgresql/)
 
 > [React + Spring Boot + MySQL example](https://www.bezkoder.com/react-spring-boot-crud/)
 
